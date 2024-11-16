@@ -14,7 +14,7 @@ def test_part_of_respinse():
     response_get = requests.get(url = f'{URL}/pokemons', params = {'trainer_id' : TRAINER_ID})
     assert response_get.json()['data'][0]['name'] == 'New Name'
 
-@pytest.mark.parametrize ('key, value', [('name', 'New Name'), ('trainer_id', TRAINER_ID), ('id', '135456')])
+@pytest.mark.parametrize ('key, value', [('name', 'New Name'), ('trainer_id', TRAINER_ID), ('id', '135483')])
 def test_parametrize (key, value):
     response_parametrize = requests.get (url = f'{URL}/pokemons', params = {'trainer_id' : TRAINER_ID})
     assert response_parametrize.json()['data'][0][key] == value
